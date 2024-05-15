@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form6</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional custom styling */
+        body {
+            display: flex;
+            overflow-x: hidden;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFF5C3 0%, #9452A5 100%);
+        }
+
+        .custom-box {
+            border: 1px solid #ccc;
+            width: 754px;
+            height: 595px;
+            top: 4659px;
+            left: -1805.78px;
+            padding: 32px;
+            border-radius: 16px;
+            background-color: #FFFFFF;
+        }
+
+        .information {
+            display: flex;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 26.04px;
+            gap: 8px;
+            margin: 24px 0px;
+        }
+
+        .button {
+            display: flex;
+            padding: 8px 16px;
+            gap: 10px;
+            border-radius: 8px;
+            background: #EDF5FF;
+            border: 1px solid #EDF5FF;
+            color: #547593;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #547593;
+            color: black;
+        }
+
+        .button2 {
+            border: 1px solid #2F73F2;
+            background-color: #2F73F2;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-size: 16px;
+            border-radius: 8px;
+            padding: 8px 16px;
+        }
+
+        .button2:hover {
+            background-color: #FFFFFF;
+            color: #2F73F2;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+        }
+
+        .tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+        }
+
+        input::placeholder {
+            color: #547593;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-box">
+        <div class="text">
+            <h4 style="text-align: center;">Sign Up Your User Account</h4>
+            <p style="text-align: center;">Fill all form field to go to next step</p>
+            <div class="tabs">
+                <div class="tab">
+                    <img src="./public/logo/Account (2).svg" alt="Account (2).svg">
+                    <p>Account</p>
+                </div>
+                <div class="tab">
+                    <img src="./public/logo/user1.svg" alt="user1.svg">
+                    <p class="mb-2">Personal</p>
+                    <div class="border w-50 border-primary border-3"></div>
+                </div>
+                <div class="tab">
+                    <img src="./public/logo/Payment Icon (1).svg" alt="Payment Icon">
+                    <p>Payment</p>
+                </div>
+                <div class="tab">
+                    <img src="./public/logo/Finish.svg" alt="Finish.svg">
+                    <p>Finish</p>
+                </div>
+            </div>
+        </div>
+        <h5 class="information">Personal Information</h5>
+        <div class="account">
+            <div class="mb-3">
+                <input type="Full Name" class="form-control border-0 border-bottom " id="exampleInputFull Name"
+                    placeholder="Full Name">
+            </div>
+            <div class="mb-3">
+                <input type="Email Id" class="form-control border-0 border-bottom " id="exampleInputEmail Id"
+                    placeholder="Email Id">
+            </div>
+            <div class="mb-3">
+                <input type="Contact Number" class="form-control border-0 border-bottom "
+                    id="exampleInputContact Number" placeholder="Contact Number">
+            </div>
+            <div class="ps-3">
+                <p style="color: #547593;">Select Gender</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">
+                        Male
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="step-buttons">
+                <button class="button btn-secondary">Previous Step</button>
+                <button class="button2">Next Step</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
