@@ -22,9 +22,9 @@
       }
 
       .card {
-          height: 340px;
+          height: 330px;
           width: 320px;
-          background-color: orangered;
+          background-color: #FFFFFF;
           border-radius: 20px;
           position: relative;
       }
@@ -54,7 +54,7 @@
           width: 17px;
           top: 20px;
           left: 0px;
-          border-radius: 10px;
+          border-bottom-right-radius: 20px;
           z-index: -10;
       }
 
@@ -73,7 +73,7 @@
 
       .card .item-image {
           width: 100%;
-          height: 200px;
+          height: 190px;
           overflow: hidden;
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
@@ -87,16 +87,27 @@
 
       .item-content {
           padding: 10px;
+          position: absolute;
+          width: 100%;
+          margin-top: 175px;
+          border-top-right-radius: 20px;
+          background-color: #FFFFFF;
+          overflow: hidden;
+          
       }
 
       .item-content h3 {
           font-size: 20px;
-          color: #FFFFFF;
           margin-bottom: 10px;
       }
 
-      .item-content p, .item-content h6 {
-          color: #FFFFFF;
+      .star-rating span {
+          font-size: 1em;
+          color: gray;
+      }
+
+      .item-content h6 {
+          color: gray;
       }
 
       .star-rating {
@@ -121,7 +132,6 @@
 
       .star-rating span {
           font-size: 1em;
-          color: white;
       }
     </style>
 </head>
@@ -129,7 +139,7 @@
 <div class="card"> 
     <span class="offer">40% off</span> 
     <div class="item-image"> 
-        <img src="./public/logo/pizza.jpg"> 
+        <img src="public/logo/pizza.jpg" alt="Pizza"> 
     </div> 
     <div class="item-content"> 
         <h3>UBQ by Barbeque Nation</h3>
