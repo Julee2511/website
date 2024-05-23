@@ -3,252 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>pizz2</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
-        .bg-custom {
-            background-image: url('https://svgshare.com/i/16Hz.svg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            max-width: 100%;
-            min-height: 100vh;
-            padding: 242px 272px;
-        }
+      * {
+          padding: 0;
+          margin: 0;
+      }
 
-        .card { 
-            max-width: 896px;
-            min-height: 540px;
-            margin: auto;
-            padding: 24px;
-            border-radius: 24px;
-            border: 1px solid #ddd;
-        }
+      body {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #eee;
+      }
 
-        .status-button {
-            border-radius: 50px;
-            padding: 5px 15px;
-            max-width: 80px;
-            min-height: 22px; 
-        }
+      .card {
+          height: 340px;
+          width: 320px;
+          background-color: orangered;
+          border-radius: 20px;
+          position: relative;
+      }
 
-        .user-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+      .card .offer {
+          width: 90px;
+          height: 30px;
+          background-color: red;
+          position: absolute;
+          top: 28px;
+          left: -14px;
+          border-radius: 20px;
+          border-bottom-left-radius: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 15px;
+          font-weight: 700;
+          color: #fff;
+      }
 
-        th.id {
-            width: 59px;
-            height: 82px;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            text-align: left;
-        }
+      .card span:before {
+          position: absolute;
+          content: '';
+          background-color: red;
+          height: 30px;
+          width: 17px;
+          top: 20px;
+          left: 0px;
+          border-radius: 10px;
+          z-index: -10;
+      }
 
-        th.username {
-            width: 244px;
-            height: 82px;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            text-align: left;
-          
+      .card span:after {
+          position: absolute;
+          content: '';
+          background-color: #d70303;
+          height: 30px;
+          width: 17px;
+          top: 30px;
+          left: 0px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 20px;
+          z-index: -10;
+      }
 
-        }
+      .card .item-image {
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+      }
 
-        th.designation {
-            width: 244px;
-            height: 82px;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            text-align: left;
-        }
+      .card .item-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
 
-        th.status {
-            width: 244px;
-            height: 82px;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            text-align: left;
-        }
+      .item-content {
+          padding: 10px;
+      }
 
-        th.action {
-            width: 57px;
-            height: 82px;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            text-align: left;
-        }
+      .item-content h3 {
+          font-size: 20px;
+          color: #FFFFFF;
+          margin-bottom: 10px;
+      }
 
-        th, td {
-            width: 15px;
-            height: 76px;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 18px;
-            vertical-align: middle !important;
-            text-align: left;
-        }
+      .item-content p, .item-content h6 {
+          color: #FFFFFF;
+      }
 
-        th.username, td.username,
-        th.designation, td.designation,
-        th.status, td.status,
-        th.action, td.action 
-        th.id, td.id {
-            text-align: left;
-            
-        }
+      .star-rating {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-top: 10px;
+      }
 
-        /* Set background color for the first row */
-        .table tbody tr:first-child {
-            background-color: #FFFFFF;
-        }
-       
-        .bu, .bu3 {
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 8px;
-            background-color: #A5E4C2;
-            color: #00602C;
-        }
-       
-        .bu:hover, .bu3:hover {
-            background-color: #81d4a0;
-            color: #004d1f;
-        }
-        .bu2 {
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 8px;
-            background-color: #E4D6A5;
-            color: #604B00;
-        }
-        .bu2:hover {
-            background-color: #d1c292;
-            color: #4d3a00;
-        }
-        .bu4 {
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 8px;
-            background-color: #CFCFCF;
-            color: #003260;
-        }
-        .bu4:hover {
-            background-color:  #CFCFCF;
-            color: #003260;
-        }
+      .star-rating .star-icon {
+          background-color: green;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8em;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin-right: 5px;
+      }
 
-        .bu5 {
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 8px;
-            background-color: #E4A5A5;
-            color: #600000;
-        }
-        .bu5:hover {
-            background-color: #E4A5A5;
-            color: #600000;
-        }
-
-        /* Custom styles for the action dropdown */
-        .dropdown-menu {
-            min-width: 100px; /* Adjust the width as needed */
-        }
-        .dropdown-toggle::after {
-            display: none !important; /* Remove default dropdown arrow */
-        }
-        
-        .dropdown-item i {
-            margin-right: 5px; /* Add margin to the right of the icon */
-        }
+      .star-rating span {
+          font-size: 1em;
+          color: white;
+      }
     </style>
 </head>
 <body>
-    <div class="bg-custom">
-        <div class="card">
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="col checkbox"><input type="checkbox" id="selectAll"></th>
-                            <th scope="col" class="id">Id</th>
-                            <th scope="col" class="username">Username</th>
-                            <th scope="col" class="designation">Designation</th>
-                            <th scope="col" class="status">Status</th>
-                            <th scope="col" class="action">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="height:70px">
-                            <td class="col-auto"><input type="checkbox" id="select1"></td>
-                            <td class="id">01</td>
-                            <td class="username">
-                                <img src="https://svgshare.com/i/16Hq.svg" alt="Avatar" class="user-avatar">
-                                Jane Cooper
-                            </td>
-                            <td class="designation">Admin</td>
-                            <td class="status">
-                               <button class="btn btn status-button bu">Active</button>
-                            </td>
-                            <td class="action">
-                                <div class="dropdown">
-                                    <i class="bi bi-three-dots-vertical dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-plus"></i> Add</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash"></i> Delete</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr style="height:70px">
-                            <td class="col-auto"><input type="checkbox" id="select2"></td>
-                            <td class="col-auto">02</td>
-                            <td class="username">
-                                <img src="https://svgshare.com/i/16Gq.svg" alt="Avatar" class="user-avatar">
-                                Jenny Wilson
-                            </td>
-                            <td class="designation">Manager</td>
-                            <td class="status">
-                                <button class="btn btn status-button bu2">Active</button>
-                            </td>
-                            <td class="action">
-                                <div class="dropdown">
-                                    <i class="bi bi-three-dots-vertical dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-plus"></i> Add</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil"></i> Edit</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash"></i> Delete</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr style="height:70px">
-                            <td class="col-auto"><input type="checkbox" id="select3"></td>
-                            <td class="col-auto">03</td>
-                            <td class="username">
-                                <img src="https://svgshare.com/i/16Gr.svg" alt="Avatar" class="user-avatar">
-                                Robert Fox
-                            </td>
-                            <td class="designation">Designer</td>
-                            <td class="status">
-                                <button class="btn btn status-button bu3">Active</button>
-                            </td>
-                            <td class="action">
-                                <div class="dropdown">
-                                    <i class="bi bi-three-dots-vertical dropdown-toggle" data
+<div class="card"> 
+    <span class="offer">40% off</span> 
+    <div class="item-image"> 
+        <img src="./public/logo/pizza.jpg"> 
+    </div> 
+    <div class="item-content"> 
+        <h3>UBQ by Barbeque Nation</h3>
+        <div class="star-rating">
+            <div class="star-icon">
+                <i class="bi bi-star-fill"></i>
+            </div>
+            <span>4.1 &middot; 25-30 mins</span>
+        </div>
+        <h6>North Indian, Barbeque, Biryani,...Nana Mava</h6>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
